@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 
 app.use(cors({
-    origin: ['https://surjeetbackend-6iif.onrender.com', 'https://dentalfrontend-beta.vercel.app/'], // Added Vite port
+    origin: ['https://dentalfrontend-beta.vercel.app/', 'http://localhost:5173'], // Added Vite port
     methods: ['GET', 'POST', 'PUT', 'DELETE']
 }));
 
@@ -22,7 +22,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // 1. Initialize Socket.io FIRST
 const io = new Server(server, {
     cors: {
-        origin: ['https://surjeetbackend-6iif.onrender.com', 'https://dentalfrontend-beta.vercel.app/'],
+        origin: ['https://dentalfrontend-beta.vercel.app/', 'http://localhost:5173'],
         methods: ['GET', 'POST']
     }
 });
